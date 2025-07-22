@@ -1,17 +1,28 @@
 const POKEMON = ['pikachu', 'squirtle', 'charmander', 'bulbasaur', 'charizard', 'ditto', 'scizor', 'eevee', 'gengar', 'mew'];
 
-function extractPokeImage() {
+async function extractPokeImage() {
+  try {
+    const responses = await Promise.all(
+      POKEMON.map(pokemon =>
+        fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
+          .then(res => {
+            if (!res.ok) throw new Error(`HTTP error for ${pokemon}`);
+            return res.json();
+          })
+          .then(data => ({
+            name: pokemon,
+            imageUrl: data.sprites.front_default
+          }))
+      )
+    );
 
-  POKEMON.forEach((pokemon) => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-      .then(response => response.json())
-      .then(data => {
-        console.log(`Image url: ${data.sprites.front_default}`);
-      })
-      .catch(error => {
-        console.log(`Opps not found ${error}`);
-      });
-  });
+    responses.forEach(({ name, imageUrl }) => {
+      console.log(`Image URL for ${name}: ${imageUrl}`);
+    });
+  } catch (error) {
+    console.error('An error occurred:', error.message);
+  }
 }
 
 export default extractPokeImage;
+
