@@ -33,7 +33,7 @@ function PokemonList() {
   }, []);
 
   return (
-    <div>
+    <div className="cardDiv">
       {pokemonList.map(p => (
         <DisplayPokemon key={p.name} name={p.name} imageUrl={p.imageUrl} />
       ))}
