@@ -1,7 +1,12 @@
 function DisplayPokemon({ name, imageUrl }) {
   return (
     <>
-      <img src={imageUrl} alt={name} />
+      <div className="cardDiv">
+        <div className="card">
+          <img src={imageUrl} alt={name} />
+          <p>{name}</p>
+        </div>
+      </div>
     </>
   );
 }
