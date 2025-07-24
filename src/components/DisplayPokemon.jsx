@@ -1,11 +1,11 @@
-export function increaseScore(name, score, setScore, maxScore, setMaxScore, clickedPokemon, setClickedPokemon) {
+export function increaseScore(name, score, setScore, maxScore, setMaxScore, clickedPokemon, setClickedPokemons) {
   if (!clickedPokemon.includes(name)) {
     setScore(score + 1);
-    setClickedPokemon([...clickedPokemon, name]);
+    setClickedPokemons([...clickedPokemon, name]);
   } else {
     setMaxScore(Math.max(score, maxScore));
     setScore(0);
-    setClickedPokemon([]);
+    setClickedPokemons([]);
   }
 }
 
@@ -13,12 +13,12 @@ function DisplayPokemon({
   name, imageUrl, 
   score, setScore, 
   maxScore, setMaxScore,
-  clickedPokemon, setClickedPokemon
+  clickedPokemon, setClickedPokemons
 }) {
 
   return (
     <>
-      <div className="card" onClick={() => increaseScore(name, score, setScore, maxScore, setMaxScore, clickedPokemon, setClickedPokemon)} >
+      <div className="card" onClick={() => increaseScore(name, score, setScore, maxScore, setMaxScore, clickedPokemon, setClickedPokemons)} >
         <img src={imageUrl} alt={name} />
         <p>{name}</p>
       </div>

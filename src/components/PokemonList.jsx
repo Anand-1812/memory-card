@@ -8,7 +8,7 @@ function PokemonList({
   setPokemonList, 
   score, setScore, 
   maxScore, setMaxScore, 
-  clickedPokemon, setClickedPokemon
+  clickedPokemon, setClickedPokemons
 }) {
 
   useEffect(() => {
@@ -43,7 +43,7 @@ function PokemonList({
         <DisplayPokemon key={p.name} name={p.name} imageUrl={p.imageUrl} 
           score={score} setScore={setScore} 
           maxScore={maxScore} setMaxScore={setMaxScore}
-          clickedPokemon={clickedPokemon} setClickedPokemon={setClickedPokemon}
+          clickedPokemon={clickedPokemon} setClickedPokemons={setClickedPokemons}
         />
       ))}
     </div>
