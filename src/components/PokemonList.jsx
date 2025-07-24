@@ -3,7 +3,7 @@ import DisplayPokemon from "./DisplayPokemon";
 
 const POKEMON = ['pikachu', 'squirtle', 'charmander', 'bulbasaur', 'charizard', 'ditto', 'scizor', 'eevee', 'gengar', 'mew'];
 
-function PokemonList({ pokemonList, setPokemonList }) {
+function PokemonList({ pokemonList, setPokemonList, score, setScore }) {
 
   useEffect(() => {
     async function fetchPokeImage() {
@@ -34,7 +34,7 @@ function PokemonList({ pokemonList, setPokemonList }) {
   return (
     <div className="cardDiv">
       {pokemonList.map(p => (
-        <DisplayPokemon key={p.name} name={p.name} imageUrl={p.imageUrl} />
+        <DisplayPokemon key={p.name} name={p.name} imageUrl={p.imageUrl} score={score} setScore={setScore} />
       ))}
     </div>
   );
