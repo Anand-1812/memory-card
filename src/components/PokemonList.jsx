@@ -3,8 +3,7 @@ import DisplayPokemon from "./DisplayPokemon";
 
 const POKEMON = ['pikachu', 'squirtle', 'charmander', 'bulbasaur', 'charizard', 'ditto', 'scizor', 'eevee', 'gengar', 'mew'];
 
-function PokemonList() {
-  const [pokemonList, setPokemonList] = useState([]);
+function PokemonList({ pokemonList, setPokemonList }) {
 
   useEffect(() => {
     async function fetchPokeImage() {
