@@ -41,6 +41,7 @@ function PokemonList({
     <div className="cardDiv">
       {pokemonList.map(p => (
         <DisplayPokemon key={p.name} name={p.name} imageUrl={p.imageUrl} 
+          pokemonList={pokemonList} setPokemonList={setPokemonList}
           score={score} setScore={setScore} 
           maxScore={maxScore} setMaxScore={setMaxScore}
           clickedPokemon={clickedPokemon} setClickedPokemons={setClickedPokemons}
