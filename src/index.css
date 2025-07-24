@@ -4,6 +4,36 @@ body {
   height: 100vh;
 }
 
-.cardDiv {
+.mainDiv {
+  padding: 0 50px;
+}
+
+.navBar {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardDiv {
+  margin-top: 1.3rem;
+  display: grid;
+  grid-template-columns: repeat(5, 0.8fr);
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid black;
+}
+
+.scoreDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
