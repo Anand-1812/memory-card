@@ -17,9 +17,13 @@ function App() {
               <label>Score: </label>
               <p>{0}</p>
             </div>
+            <div className="maxScoreDiv">
+              <label>Max Score: </label>
+              <p>{0}</p>
+            </div>
           </div>
         </div>
-        {showList && <PokemonList />}  
+        {showList && <PokemonList />}
       </div>
     </>
   );

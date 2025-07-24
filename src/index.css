@@ -37,3 +37,9 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.maxScoreDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
