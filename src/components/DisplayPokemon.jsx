@@ -1,3 +1,4 @@
+// randomly place the pokemon after clicking 
 function shufflePokeCard(array) {
   const newArr = [...array];
   for (let i = newArr.length-1; i > 0; i--) {

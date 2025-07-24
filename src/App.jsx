@@ -2,6 +2,7 @@ import { useState } from "react";
 import PokemonList from "./components/PokemonList"
 
 function App() {
+  // all the states 
   const [pokemonList, setPokemonList] = useState([]);
   const [showList, setShowList] = useState(false);
   const [score, setScore] = useState(0);

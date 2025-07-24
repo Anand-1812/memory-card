@@ -12,6 +12,7 @@ function PokemonList({
 }) {
 
   useEffect(() => {
+    // fetch from poke api and put it in pokemonlist state
     async function fetchPokeImage() {
       try {
         const responses = await Promise.all(
