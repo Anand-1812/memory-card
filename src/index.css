@@ -21,7 +21,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 1.25rem;
-  flex-wrap: wrap;
+  cursor: pointer;
 }
 
 .card {
