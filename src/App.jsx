@@ -8,8 +8,16 @@ function App() {
     <>
       <div className="mainDiv">
         <div className="navBar">
-          <h1>Memory card</h1>
-          <button onClick={() => setShowList(true)}>Get Pokemon</button>
+          <div className="navLeft">
+            <h1>Memory card</h1>
+            <button onClick={() => setShowList(true)}>Get Pokemon</button>
+          </div>
+          <div className="navRight">
+            <div className="scoreDiv">
+              <label>Score: </label>
+              <p>{0}</p>
+            </div>
+          </div>
         </div>
         {showList && <PokemonList />}  
       </div>
