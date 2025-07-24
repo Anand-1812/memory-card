@@ -2,6 +2,7 @@ import { useState } from "react";
 import PokemonList from "./components/PokemonList"
 
 function App() {
+  const [pokemonList, setPokemonList] = useState([]);
   const [showList, setShowList] = useState(false);
 
   return (
@@ -23,7 +24,7 @@ function App() {
             </div>
           </div>
         </div>
-        {showList && <PokemonList />}
+        {showList && <PokemonList pokemonList={pokemonList} setPokemonList={setPokemonList} />}
       </div>
     </>
   );
