@@ -4,6 +4,9 @@ import PokemonList from "./components/PokemonList"
 function App() {
   const [pokemonList, setPokemonList] = useState([]);
   const [showList, setShowList] = useState(false);
+  const [score, setScore] = useState(0);
+  const [maxScore, setMaxScore] = useState(0);
+  const [clickedPokemon, setClickedPokemons] = useState([]);
 
   return (
     <>
@@ -11,20 +14,25 @@ function App() {
         <div className="navBar">
           <div className="navLeft">
             <h1>Memory card</h1>
-            <button onClick={() => setShowList(true)}>Get Pokemon</button>
+            <button onClick={() => setShowList(true)}>Start Game</button>
           </div>
           <div className="navRight">
             <div className="scoreDiv">
               <label>Score: </label>
-              <p>{0}</p>
+              <p>{score}</p>
             </div>
             <div className="maxScoreDiv">
               <label>Max Score: </label>
-              <p>{0}</p>
+              <p>{maxScore}</p>
             </div>
           </div>
         </div>
-        {showList && <PokemonList pokemonList={pokemonList} setPokemonList={setPokemonList} />}
+        {showList && <PokemonList
+          pokemonList={pokemonList} setPokemonList={setPokemonList}
+          score={score} setScore={setScore}
+          maxScore={maxScore} setMaxScore={setMaxScore}
+          clickedPokemon={clickedPokemon} setClickedPokemons={setClickedPokemons}
+        />}
       </div>
     </>
   );
